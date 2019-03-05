@@ -3286,7 +3286,7 @@ namespace Microsoft.AspNetCore.Server.Kestrel.InMemory.FunctionalTests
                 {
                     await response.StartAsync();
                 }
-                Assert.Throws<InvalidOperationException>(() => response.BodyPipe.Advance(1));
+                Assert.Throws<ArgumentOutOfRangeException>(() => response.BodyPipe.Advance(1));
             }, testContext))
             {
                 using (var connection = server.CreateConnection())
